@@ -1,1 +1,1 @@
-React Notepad Application.
+React Notepad.
