@@ -35,19 +35,6 @@ class NoteList extends React.Component {
     this.props.toggleCheck(index);
   }
 
-  // loadNotes(notes) {
-  //   return notes.map((note, index) => (
-  //     <Note
-  //       noteTitle={note.noteTitle}
-  //       isSelected={note.isSelected}
-  //       onSelect={() => this.updateSelection(index)}
-  //       isChecked={note.isChecked}
-  //       onCheck={() => this.updateCheck(index)}
-  //       key={note.noteTitle + index}
-  //     />
-  //   ));
-  // }
-
   loadNotes(notes) {
     return notes
       .filter(note =>

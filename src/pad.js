@@ -55,7 +55,8 @@ class Pad extends React.Component {
   render() {
     const { classes } = this.props;
     const { padTitle, padContent } = this.props;
-
+    const grayPads =
+      this.props.length === 0 ? { backgroundColor: "#EFEFEF" } : {};
     return (
       <div>
         <TextField
@@ -63,6 +64,7 @@ class Pad extends React.Component {
           fullWidth
           value={padTitle}
           onChange={this.updatePadTitle}
+          style={grayPads}
         />
         <TextField
           inputProps={{
@@ -74,12 +76,13 @@ class Pad extends React.Component {
           fullWidth
           value={padContent}
           onChange={this.updatePadContent}
+          style={grayPads}
         />
       </div>
     );
   }
 }
-// gray out pads when no notes in notelist
+
 export default connect(
   mapStateToProps,
   mapDispatchToProps

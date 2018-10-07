@@ -140,7 +140,7 @@ class Options extends React.Component {
     }
   };
 
-  download(title, content) {
+  download = (title, content) => {
     title = title !== "" ? title + ".txt" : "text.txt";
 
     let element = document.createElement("a");
@@ -153,7 +153,7 @@ class Options extends React.Component {
     document.body.appendChild(element);
     element.click();
     document.body.removeChild(element);
-  }
+  };
 
   onUpload = file => {
     this.props.addNote();

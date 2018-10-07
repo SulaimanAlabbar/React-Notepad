@@ -11,7 +11,7 @@ const Note = ({ noteTitle, isSelected, onSelect, isChecked, onCheck }) => (
     onClick={onSelect}
     style={{ minHeight: "50px" }}
   >
-    <ListItemText primary={noteTitle} style={{ wordWrap: "break-word" }} />
+    <ListItemText primary={noteTitle} />
     <ListItemSecondaryAction>
       <Checkbox checked={isChecked} onClick={onCheck} />
     </ListItemSecondaryAction>

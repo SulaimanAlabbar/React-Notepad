@@ -9,9 +9,7 @@ const style = {
   margin: "0 auto",
   display: "grid",
   gridTemplateColumns: "auto auto",
-  gridGap: "1em",
-  overflow: "hidden",
-  minWidth: "0"
+  gridGap: "1em"
 };
 
 const Notepad = () => {
