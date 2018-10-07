@@ -8,7 +8,6 @@ const style = {
   maxWidth: "70%",
   margin: "0 auto",
   display: "grid",
-  // gridTemplateColumns: "35% 65%",
   gridTemplateColumns: "auto auto",
   gridGap: "1em",
   overflow: "hidden",

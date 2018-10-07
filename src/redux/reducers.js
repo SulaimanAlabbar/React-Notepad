@@ -1,5 +1,5 @@
 import {
-  FILTER_NOTES,
+  ADD_FILTER,
   ADD_NOTE,
   DEL_NOTE,
   STAR_NOTE,
@@ -11,6 +11,11 @@ import {
 
 function reducer(state, action) {
   switch (action.type) {
+    case ADD_FILTER:
+      return Object.assign({}, state, {
+        filter: action.text
+      });
+
     case ADD_NOTE:
       return Object.assign({}, state, {
         notes: [
@@ -37,11 +42,6 @@ function reducer(state, action) {
                   (note, index) =>
                     note.isChecked && index < state.selectedNoteIndex
                 ).length
-      });
-
-    case FILTER_NOTES:
-      return Object.assign({}, state, {
-        filter: action.text
       });
 
     case SELECT_NOTE:

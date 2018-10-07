@@ -1,7 +1,7 @@
 //===========================================
 //ACTIONS
 //===========================================
-export const FILTER_NOTES = "FILTER_NOTES";
+export const ADD_FILTER = "ADD_FILTER";
 export const ADD_NOTE = "ADD_NOTE";
 export const DEL_NOTE = "DEL_NOTE";
 export const STAR_NOTE = "STAR_NOTE";

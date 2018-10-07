@@ -15,6 +15,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
+    addFilter: text => dispatch(actionCreators.addFilter(text)),
     addNote: () => dispatch(actionCreators.addNote()),
     selectNote: index => dispatch(actionCreators.selectNote(index))
   };
@@ -28,7 +29,7 @@ class SearchBar extends React.Component {
     this.addNote = this.addNote.bind(this);
   }
   updateFilter(e) {
-    // store.dispatch(actionCreators.setFilter(e.target.value));
+    this.props.addFilter(e.target.value);
   }
 
   addNote() {
