@@ -22,7 +22,7 @@ function reducer(state, action) {
           ...state.notes,
           {
             noteTitle: "New Note",
-            noteContent: "ABCD",
+            noteContent: "",
             isSelected: false,
             isChecked: false
           }
