@@ -1,5 +1,5 @@
 import {
-  FILTER_NOTES,
+  ADD_FILTER,
   ADD_NOTE,
   DEL_NOTE,
   STAR_NOTE,
@@ -9,9 +9,9 @@ import {
   SET_NOTE_CONTENT
 } from "./actionTypes";
 
-export function setFilter(text) {
+export function addFilter(text) {
   return {
-    type: FILTER_NOTES,
+    type: ADD_FILTER,
     text: text
   };
 }

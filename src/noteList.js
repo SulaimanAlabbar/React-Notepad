@@ -6,7 +6,8 @@ import { connect } from "react-redux";
 
 const mapStateToProps = state => {
   return {
-    notes: state.notes
+    notes: state.notes,
+    filter: state.filter
   };
 };
 
@@ -34,17 +35,34 @@ class NoteList extends React.Component {
     this.props.toggleCheck(index);
   }
 
+  // loadNotes(notes) {
+  //   return notes.map((note, index) => (
+  //     <Note
+  //       noteTitle={note.noteTitle}
+  //       isSelected={note.isSelected}
+  //       onSelect={() => this.updateSelection(index)}
+  //       isChecked={note.isChecked}
+  //       onCheck={() => this.updateCheck(index)}
+  //       key={note.noteTitle + index}
+  //     />
+  //   ));
+  // }
+
   loadNotes(notes) {
-    return notes.map((note, index) => (
-      <Note
-        noteTitle={note.noteTitle}
-        isSelected={note.isSelected}
-        onSelect={() => this.updateSelection(index)}
-        isChecked={note.isChecked}
-        onCheck={() => this.updateCheck(index)}
-        key={note.noteTitle + index}
-      />
-    ));
+    return notes
+      .filter(note =>
+        note.noteTitle.toLowerCase().includes(this.props.filter.toLowerCase())
+      )
+      .map((note, index) => (
+        <Note
+          noteTitle={note.noteTitle}
+          isSelected={note.isSelected}
+          onSelect={() => this.updateSelection(index)}
+          isChecked={note.isChecked}
+          onCheck={() => this.updateCheck(index)}
+          key={note.noteTitle + index}
+        />
+      ));
   }
 
   render() {
