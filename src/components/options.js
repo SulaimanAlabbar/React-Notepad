@@ -12,7 +12,7 @@ import CheckCircleIcon from "@material-ui/icons/CheckCircle";
 import SnackbarContent from "@material-ui/core/SnackbarContent";
 import CloseIcon from "@material-ui/icons/Close";
 import classNames from "classnames";
-import * as actionCreators from "./redux/actionCreators";
+import * as actionCreators from "../actions/actionCreators";
 import { connect } from "react-redux";
 
 const mapStateToProps = state => {
@@ -30,15 +30,7 @@ const mapStateToProps = state => {
   };
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    delNote: () => dispatch(actionCreators.delNote()),
-    addNote: () => dispatch(actionCreators.addNote()),
-    setNoteTitle: text => dispatch(actionCreators.setNoteTitle(text)),
-    setNoteContent: text => dispatch(actionCreators.setNoteContent(text)),
-    selectNote: index => dispatch(actionCreators.selectNote(index))
-  };
-};
+const mapDispatchToProps = actionCreators;
 
 const variantIcon = {
   success: CheckCircleIcon
@@ -120,7 +112,7 @@ class Options extends React.Component {
   }
 
   onDelete() {
-    this.props.delNote();
+    this.props.deleteNote();
   }
 
   handleClose = (event, reason) => {
@@ -131,9 +123,9 @@ class Options extends React.Component {
     this.setState({ open: false });
   };
 
-  onDownload = Transition => () => {
+  onDownload = transition => () => {
     if (this.props.fileName !== -1) {
-      this.setState({ open: true, Transition });
+      this.setState({ open: true, transition });
       this.download(this.props.fileName, this.props.fileContent);
     } else {
       window.alert("No selected note");

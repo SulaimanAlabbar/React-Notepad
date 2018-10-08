@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Notepad from "./notepad";
+import Notepad from "./components/notepad";
 import { Provider } from "react-redux";
-import store from "./redux/store";
+import store from "./store";
 
 const App = () => {
   return (

@@ -1,6 +1,6 @@
 export const ADD_FILTER = "ADD_FILTER";
 export const ADD_NOTE = "ADD_NOTE";
-export const DEL_NOTE = "DEL_NOTE";
+export const DELETE_NOTE = "DELETE_NOTE";
 export const STAR_NOTE = "STAR_NOTE";
 
 export const SELECT_NOTE = "SELECT_NOTE";

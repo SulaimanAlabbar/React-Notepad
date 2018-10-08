@@ -1,7 +1,7 @@
 import {
   ADD_FILTER,
   ADD_NOTE,
-  DEL_NOTE,
+  DELETE_NOTE,
   STAR_NOTE,
   SELECT_NOTE,
   TOGGLE_CHECK,
@@ -22,9 +22,9 @@ export function addNote() {
   };
 }
 
-export function delNote() {
+export function deleteNote() {
   return {
-    type: DEL_NOTE
+    type: DELETE_NOTE
   };
 }
 

@@ -1,7 +1,7 @@
 import React from "react";
 import TextField from "@material-ui/core/TextField";
 import { withStyles } from "@material-ui/core/styles";
-import * as actionCreators from "./redux/actionCreators";
+import * as actionCreators from "../actions/actionCreators";
 import { connect } from "react-redux";
 
 const mapStateToProps = state => {
@@ -18,12 +18,7 @@ const mapStateToProps = state => {
   };
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    setNoteTitle: text => dispatch(actionCreators.setNoteTitle(text)),
-    setNoteContent: text => dispatch(actionCreators.setNoteContent(text))
-  };
-};
+const mapDispatchToProps = actionCreators;
 
 const styles = () => ({
   wrapper: {

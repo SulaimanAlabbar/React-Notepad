@@ -1,7 +1,7 @@
 import React from "react";
 import List from "@material-ui/core/List";
 import Note from "./note";
-import * as actionCreators from "./redux/actionCreators";
+import * as actionCreators from "../actions/actionCreators";
 import { connect } from "react-redux";
 
 const mapStateToProps = state => {
@@ -11,12 +11,7 @@ const mapStateToProps = state => {
   };
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    toggleCheck: index => dispatch(actionCreators.toggleCheck(index)),
-    selectNote: index => dispatch(actionCreators.selectNote(index))
-  };
-};
+const mapDispatchToProps = actionCreators;
 
 class NoteList extends React.Component {
   constructor() {

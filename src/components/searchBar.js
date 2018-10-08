@@ -1,10 +1,10 @@
 import React from "react";
 import TextField from "@material-ui/core/TextField";
-import SearchIcon from "./Images/search.svg";
+import SearchIcon from "../images/search.svg";
 import InputAdornment from "@material-ui/core/InputAdornment";
 import Button from "@material-ui/core/Button";
 import AddIcon from "@material-ui/icons/Add";
-import * as actionCreators from "./redux/actionCreators";
+import * as actionCreators from "../actions/actionCreators";
 import { connect } from "react-redux";
 
 const mapStateToProps = state => {
@@ -13,13 +13,7 @@ const mapStateToProps = state => {
   };
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    addFilter: text => dispatch(actionCreators.addFilter(text)),
-    addNote: () => dispatch(actionCreators.addNote()),
-    selectNote: index => dispatch(actionCreators.selectNote(index))
-  };
-};
+const mapDispatchToProps = actionCreators;
 
 class SearchBar extends React.Component {
   constructor() {
